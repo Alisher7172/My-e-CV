@@ -220,6 +220,10 @@ nav ul li a:hover::after {
   width: 100%;
   border-radius: 10px;
   display: block;
+  transition: 0.5s;
+}
+.work:hover img {
+  transform: scale(1.1);
 }
 
 
@@ -227,16 +231,95 @@ nav ul li a:hover::after {
 .bookmarks {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .bookmarks a {
-  margin: 20px 40px ;
+  margin: 8px 20px ;
   text-decoration: none;
 }
 
 .bookmarks a:hover {
   color: white;
   font-size: 25px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
+
+/* ------------contact---------------- */
+
+.contact-left {
+  flex-basis: 35%;
+}
+
+.contact-right {
+  flex-basis: 60%;
+}
+
+.contact-left p {
+  margin-top:30px;
+}
+
+.contact-left p i {
+  color:rgba(255, 0, 81, 0.897);
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+.social-icons  a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: rgba(171, 171, 171, 0.92);
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+  color: rgba(255, 0, 81, 0.95);
+  transform: translateY(-5px);
+}
+
+.cv-btn {
+  display: inline-block;
+  background: rgba(190, 18, 18, 0.9);
+  color: white;
+  margin: 20px 0;
+  padding: 10px 25px;
+  text-decoration: none;
+}
+.cv-btn:hover {
+  background: rgba(190, 18, 18, 0.5);
+  padding: 12px 27px;
+}
+
+.contact-right form {
+  width:100%;
+}
+form input, form textarea {
+  width:100%;
+  border: 0;
+  outline: none;
+  background: rgba(38, 38, 38, 0.9);
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+form .submit-btn {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: rgba(56, 34, 34, 0.6);
+  font-weight: 300;
+  margin-top: 20px;
+}
