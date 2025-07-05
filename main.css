@@ -222,3 +222,21 @@ nav ul li a:hover::after {
   display: block;
 }
 
+
+/* --------------bookmarks------------------ */
+.bookmarks {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookmarks a {
+  margin: 20px 40px ;
+  text-decoration: none;
+}
+
+.bookmarks a:hover {
+  color: white;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
