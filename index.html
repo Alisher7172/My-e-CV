@@ -14,13 +14,15 @@
      <div class="container">
       <nav>
         <img src="images/logo.jpg" class="logo">
-        <ul>
-          <li><a>Home</a></li>
-          <li><a>About</a>></li>
-          <li><a>Services</a></li>
-          <li><a>Portfolio</a></li>
-          <li><a>Contact</a></li>
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fas fa-times" onclick="closeMenu()"></i>
         </ul>
+        <i class="fas fa-bars" onclick="openMenu()"></i>
       </nav>
       <div class="header-text">
         <p>Full Stack Developer</p>
@@ -142,12 +144,13 @@
           <a href="#" class="cv-btn" download>Download CV</a>
         </div>
         <div class="contact-right"> 
-          <form>
+          <form name="submit-to-google-sheet">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
             <button type="submit" class="cv-btn submit-btn">Submit</button>
           </form>
+          <span id="form-message"></span>
         </div>
       </div>
     </div>
@@ -155,7 +158,24 @@
       <p>Copyright Alisher. Made by Alisher</p>
     </div>
   </div>
-   
+  <script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbwWbRf9pUSwk0IYzxOGi22hlO3E8dYzlqY6rk8GzS3r96GhKt4nB0iYdRv0xAAqaTRO_w/exec>'
+  const form = document.forms['submit-to-google-sheet']
+  const formMessage = document.getElemetById("form-message");
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        formMessage.innerHTML = "Message sent successfully";
+        setTimeout(function(){
+          formMessage.innerHtml = "";
+        },5000)
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   <script src="app.js"></script>
   <script src="main.js"></script>
 </body>
