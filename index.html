@@ -15,11 +15,11 @@
       <nav>
         <img src="images/logo.jpg" class="logo">
         <ul>
-          <li><a>Home</a></li>
-          <li><a>About</a>></li>
-          <li><a>Services</a></li>
-          <li><a>Portfolio</a></li>
-          <li><a>Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-text">
@@ -74,7 +74,7 @@
   <!----------services--------->
   <div id="services">
     <div class="container">
-      <h1 calss="sub-title">My Services</h1>
+      <h1 class="sub-title">My Services</h1>
       <div class="services-list">
          <div>
           <i class="fa-solid fa-code"></i>
@@ -112,17 +112,6 @@
 
   <!-- ---------------contact------------------ -->
 
- 
-
-  <!-- -----------navbar--------- -->
-   <div class="footer">
-      <nav class="bookmarks">
-        <a href="#about_me">About Me</a>
-        <a href="#services">My Services</a>
-        <a href="#portfolio">My Works</a>
-      </nav>
-   </div>
-
   <div id="contact">
     <div class="container">
       <div class="row">
@@ -158,7 +147,7 @@
   <script>
   const scriptURL = '<https://script.google.com/macros/s/AKfycbwWbRf9pUSwk0IYzxOGi22hlO3E8dYzlqY6rk8GzS3r96GhKt4nB0iYdRv0xAAqaTRO_w/exec>'
   const form = document.forms['submit-to-google-sheet']
-  const formMessage = document.getElemetById("form-message");
+  const formMessage = document.getElementById("form-message");
 
   form.addEventListener('submit', e => {
     e.preventDefault()
