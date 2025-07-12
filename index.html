@@ -7,6 +7,7 @@
   <link rel="icon" href="images/cv.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="main.css">
+  <script src="smoky-cursor.js"></script>
   <script src="https://kit.fontawesome.com/ea122f8d0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -131,12 +132,13 @@
           <a href="#" class="cv-btn" download>Download CV</a>
         </div>
         <div class="contact-right"> 
-          <form>
+          <form name="submit-to-google-sheet" id="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="6" placeholder="Your Message"></textarea>
             <button type="submit" class="cv-btn submit-btn">Submit</button>
           </form>
+          <div id="form-message"></div>
         </div>
       </div>
     </div>
@@ -145,7 +147,7 @@
     </div>
   </div>
   <script>
-  const scriptURL = '<https://script.google.com/macros/s/AKfycbwWbRf9pUSwk0IYzxOGi22hlO3E8dYzlqY6rk8GzS3r96GhKt4nB0iYdRv0xAAqaTRO_w/exec>'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbRf9pUSwk0IYzxOGi22hlO3E8dYzlqY6rk8GzS3r96GhKt4nB0iYdRv0xAAqaTRO_w/exec'
   const form = document.forms['submit-to-google-sheet']
   const formMessage = document.getElementById("form-message");
 
@@ -155,14 +157,16 @@
       .then(response => {
         formMessage.innerHTML = "Message sent successfully";
         setTimeout(function(){
-          formMessage.innerHtml = "";
+          formMessage.innerHTML = "";
         },5000)
         form.reset();
       })
       .catch(error => console.error('Error!', error.message))
   })
-</script>
+</script> 
+  <canvas id="fluid"></canvas>
   <script src="app.js"></script>
   <script src="main.js"></script>
+  <script src="cursor.js"></script>
 </body>
 </html>
