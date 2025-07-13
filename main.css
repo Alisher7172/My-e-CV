@@ -75,6 +75,20 @@ nav ul li a:hover::after {
   font-size: 30px;
 }
 
+.uzb {
+  background: linear-gradient(
+    180deg,
+    #1EB6E7 0%,       
+    #1EB6E7 33%,      
+    #FFFFFF 33%,      
+    #FFFFFF 66%,       
+    #3E9A00 66%,     
+    #3E9A00 100%       
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .header-text h1 {
   font-size: 60px;
   margin-top: 20px;
