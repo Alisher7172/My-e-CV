@@ -244,9 +244,11 @@ nav ul li a:hover::after {
 }
 
 .work img {
-  width: 100%;
+  width: auto;
+  height: 100%;
+  margin: 10px;
+  display: inline-block;
   border-radius: 10px;
-  display: block;
   transition: 0.5s;
 }
 .work:hover img {
@@ -340,6 +342,10 @@ form .submit-btn {
   font-size: 18px;
   margin-top: 20px;
   cursor: pointer;
+}
+form .submit-btn:hover {
+  background: rgba(190, 18, 18, 0.5);
+  padding: 15px 65px;
 }
 
 .copyright {
